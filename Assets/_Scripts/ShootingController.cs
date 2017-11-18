@@ -7,6 +7,9 @@ public class ShootingController : MonoBehaviour {
     public GameObject bullet;
     public GameObject flusBullet;
     public GameObject spawnPoint;
+    public AudioSource flusSound;
+    public AudioSource clinesSound;
+
 
     public float bulletSpeed;
     public float flusSpeed;
@@ -43,6 +46,7 @@ public class ShootingController : MonoBehaviour {
             bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
             bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localBulletSpeed, bulletClone.GetComponent<Rigidbody2D>().velocity.y);
             clinesAmmo--;
+            clinesSound.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.E) && flusAmmo > 0)
@@ -57,6 +61,7 @@ public class ShootingController : MonoBehaviour {
             flusBulletClone = (GameObject)Instantiate(flusBullet, spawnPoint.transform.position, myRotation);
             flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localFlusSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
             flusAmmo -= 10;
+            flusSound.Play();
         }
 
         if(rb.velocity.x == 0f && rb.velocity.y == 0)

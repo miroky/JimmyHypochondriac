@@ -70,7 +70,6 @@ public class ScrollController : MonoBehaviour {
     //Salto y doble salto (si permitido, mediante parámetro canDoubleJump) del personaje
     private void Jump()
     {
-        Debug.Log("Jumping");
         rb.velocity = new Vector3(rb.velocity.x, 0f);
         rb.AddForce(new Vector2(0f, jumpForce));
         isJumping = true;

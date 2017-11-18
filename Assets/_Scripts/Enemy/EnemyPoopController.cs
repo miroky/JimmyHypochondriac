@@ -29,9 +29,6 @@ public class EnemyPoopController : MonoBehaviour {
 
         if (time == shootInterval)
         {
-
-            Debug.Log("POOP");
-
             //SE INSTANCIA EL SONIDO DEL DISPARO Y SE GUARDA LA ROTACION DEL TRANSFORM
             //shootSound.Play();
             GameObject bulletClone;

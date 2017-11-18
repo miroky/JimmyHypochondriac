@@ -17,12 +17,12 @@ public class UIImageFiller : MonoBehaviour {
         image = GetComponent<Image>();
         if (uiType.ToString() == "YUYU")
         {            
-            float actualFill = GameObject.FindGameObjectWithTag("Player").GetComponent<YuyuController>()._actualYuyu;
+            actualFill = GameObject.FindGameObjectWithTag("Player").GetComponent<YuyuController>()._actualYuyu;
 
         }
         if (uiType.ToString() == "FLUSFLUS")
         {            
-            float actualFill = GameObject.FindGameObjectWithTag("Player").GetComponent<ShootingController>().flusAmmo;
+            actualFill = GameObject.FindGameObjectWithTag("Player").GetComponent<ShootingController>().flusAmmo;
         }
        
         float portion = Mathf.InverseLerp(0, totalFill, actualFill);

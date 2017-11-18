@@ -28,9 +28,10 @@ public class BulletBehaviour : MonoBehaviour {
             if (collisioner.gameObject.CompareTag("Enemy"))
             {
                 collisioner.GetComponent<EnemyController>().hpPoints--;
+                Destroy(gameObject);
             }
         }
-        Destroy(gameObject);
+        
     }
 
     //DESTRUCCION DE LA BALA EN CASO DE CHOQUE
@@ -41,7 +42,7 @@ public class BulletBehaviour : MonoBehaviour {
         {
             if (collisioner.gameObject.CompareTag("Enemy"))
             {
-                collisioner.gameObject.GetComponent<EnemyController>().hpPoints--;
+                Destroy(collisioner.gameObject);
                 Destroy(gameObject);
             }
         }

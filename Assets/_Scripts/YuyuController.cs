@@ -22,8 +22,6 @@ public class YuyuController : MonoBehaviour {
 
     private bool _inYuyuArea = false;
     private bool _inYuyuEnemy = false;
-    private Coroutine enemyCo;
-    private Coroutine garbCo;
 
     private void Start()
     {
@@ -32,15 +30,13 @@ public class YuyuController : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("EnemyNear");
         if (other.tag == "Enemy")
         {
             _inYuyuEnemy = true;
-            enemyCo = StartCoroutine(YuyuIncreaseTroughTimeEnemies(_secondsDelayEnemy, _enemyYuyuIncrease));
+            StartCoroutine(YuyuIncreaseTroughTimeEnemies(_secondsDelayEnemy, _enemyYuyuIncrease));
         }
         if (other.tag == "Garbage")
         {
-            Debug.Log("Garbage is near!");
             _inYuyuArea = true;
              StartCoroutine(YuyuIncreaseTroughTime(_secondsDelayGarbage, _garbageYuyuIncrease));
         }
@@ -48,7 +44,6 @@ public class YuyuController : MonoBehaviour {
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("SJIJSIASJD" +_initialYuyu);
         if (other.tag == "Garbage")
             _inYuyuArea=false;
 
@@ -58,7 +53,6 @@ public class YuyuController : MonoBehaviour {
 
     private IEnumerator YuyuIncreaseTroughTime(float secondsWait, float yuyuIncrease)
     {
-        Debug.Log(_inYuyuArea);
         while (_inYuyuArea)
         {
             yield return new WaitForSeconds(secondsWait);

@@ -9,17 +9,10 @@ public class CleaningController : MonoBehaviour {
     public Image dirt2;
     public Image dirt3;
 
-
     public Camera mainCamera;
     public GameObject player;
 
-
-    private Color colFaded;
     private DirtController dirtController;
-
-    void Start () {
-        colFaded = new Color(1f, 1f, 0.5f);
-    }
 
     void Update()
     {

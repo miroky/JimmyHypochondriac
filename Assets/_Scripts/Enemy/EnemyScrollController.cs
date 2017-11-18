@@ -19,7 +19,6 @@ public class EnemyScrollController : MonoBehaviour {
     // Private variables
     private Rigidbody2D rb;
 	private bool isJumping;
-    private bool canFly;
 
     private float direction;
 
@@ -36,7 +35,6 @@ public class EnemyScrollController : MonoBehaviour {
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		isJumping = false;
-        canFly = false;
         jumpInterval = -1;
         time = 0;
 
@@ -118,7 +116,7 @@ public class EnemyScrollController : MonoBehaviour {
         {
             isJumping = false;
         }
-        else if (col.gameObject.tag.Equals("Flus"))
+        else if (col.gameObject.tag.Equals("Flus") && !gameObject.tag.Equals("Garbage"))
         {
             Destroy(gameObject);
         }
@@ -132,7 +130,6 @@ public class EnemyScrollController : MonoBehaviour {
     {
         if (col.gameObject.tag == "EnemyTrigger")
         {
-            Debug.Log("Cambio de Orientacion");
 
             if (direction == 1)
             {

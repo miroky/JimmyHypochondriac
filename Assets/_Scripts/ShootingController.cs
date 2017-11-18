@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingController : MonoBehaviour {
+public class ShootingController : MonoBehaviour
+{
 
     public GameObject bullet;
     public GameObject flusBullet;
@@ -38,7 +39,7 @@ public class ShootingController : MonoBehaviour {
 
     void Update()
     {
-        if (_yuyuController.GetYuyuLevel() > 3)
+        if (_yuyuController.GetYuyuLevel() < 3)
         {
             if (Input.GetKeyDown(KeyCode.Return) && clinesAmmo > 0)
             {
@@ -48,23 +49,13 @@ public class ShootingController : MonoBehaviour {
                 GameObject bulletClone;
                 myRotation = transform.rotation;
 
-<<<<<<< HEAD
-            //SE INSTANCIA LA BALA
-            bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
-            bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localBulletSpeed, bulletClone.GetComponent<Rigidbody2D>().velocity.y);
-            clinesAmmo--;
-
-            StartCoroutine("playAudio", clinesSound);
-
-        }
-=======
                 //SE INSTANCIA LA BALA
                 bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
                 bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localBulletSpeed, bulletClone.GetComponent<Rigidbody2D>().velocity.y);
                 clinesAmmo--;
-            }
->>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
 
+                StartCoroutine("playAudio", clinesSound);
+            }
 
             if (Input.GetKeyDown(KeyCode.E) && flusAmmo > 0)
             {
@@ -79,30 +70,16 @@ public class ShootingController : MonoBehaviour {
                 flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localFlusSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
                 flusAmmo -= 10;
 
+                StartCoroutine("playAudio", flusSound);
             }
 
             if (rb.velocity.x == 0f && rb.velocity.y == 0)
-
-<<<<<<< HEAD
-            //SE INSTANCIA LA BALA
-            flusBulletClone = (GameObject)Instantiate(flusBullet, spawnPoint.transform.position, myRotation);
-            flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localFlusSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
-            flusAmmo -= 10;
-            StartCoroutine("playAudio", flusSound);
-        }
-=======
->>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
-
             {
-<<<<<<< HEAD
-                StartCoroutine("playAudio", reloadSound);
-                flusAmmo += 10;
-=======
                 if (Input.GetKeyDown(KeyCode.R) && flusAmmo < maxFlusAmmo)
                 {
+                    StartCoroutine("playAudio", reloadSound);
                     flusAmmo += 10;
                 }
->>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
             }
         }
         else
@@ -119,6 +96,8 @@ public class ShootingController : MonoBehaviour {
                 bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
                 bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localBulletSpeed, bulletClone.GetComponent<Rigidbody2D>().velocity.y);
                 clinesAmmo--;
+
+                StartCoroutine("playAudio", clinesSound);
             }
 
             if (Input.GetKeyDown(KeyCode.Return) && flusAmmo > 0)
@@ -133,17 +112,19 @@ public class ShootingController : MonoBehaviour {
                 flusBulletClone = (GameObject)Instantiate(flusBullet, spawnPoint.transform.position, myRotation);
                 flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localFlusSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
                 flusAmmo -= 10;
+
+                StartCoroutine("playAudio", flusSound);
             }
 
             if (rb.velocity.x == 0f && rb.velocity.y == 0)
             {
                 if (Input.GetKeyDown(KeyCode.E) && flusAmmo < maxFlusAmmo)
                 {
+                    StartCoroutine("playAudio", reloadSound);
                     flusAmmo += 10;
                 }
             }
         }
-
     }
 
     public void CheckSpeed()

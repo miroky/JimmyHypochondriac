@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrollController : MonoBehaviour {
+public class ScrollController : MonoBehaviour
+{
 
     //Private variables
     private Rigidbody2D rb;
     private bool isJumping;
     private Animator anim;
+    private YuyuController _yuyuController;
 
     //Public variables
     public float speed;
     public float jumpForce;
-<<<<<<< HEAD
     public bool facingRight;
     public AudioSource walkSound;
     public AudioSource mocoSound;
-=======
-    private Animator anim;
-    private YuyuController _yuyuController;
->>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
 
     void Start()
     {
@@ -33,6 +30,7 @@ public class ScrollController : MonoBehaviour {
 
     private void Update()
     {
+        //Con un nivel de yuyu mayor de 1--> no puedes saltar
         if (_yuyuController.GetYuyuLevel() > 1)
         {
             return;
@@ -46,40 +44,22 @@ public class ScrollController : MonoBehaviour {
 
     void FixedUpdate()
     {
+        // Movimiento normal
         if (_yuyuController.GetYuyuLevel() == 1)
         {
-<<<<<<< HEAD
-            rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
-            if (!facingRight)
-                Flip();
-            anim.SetBool("isWalking", true);
-            walkSound.loop = true;
-
-            if (!walkSound.isPlaying)
-            {
-                walkSound.loop = true;
-                walkSound.Play();
-            }
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            rb.velocity = new Vector2(speed * Time.deltaTime * -1, rb.velocity.y);
-            if (facingRight)
-                Flip();
-            anim.SetBool("isWalking", true);
-            walkSound.loop = true;
-
-            if (!walkSound.isPlaying)
-            {
-                walkSound.loop = true;
-                walkSound.Play();
-=======
             if (Input.GetKey(KeyCode.D))
             {
                 rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
                 if (!facingRight)
                     Flip();
                 anim.SetBool("isWalking", true);
+                walkSound.loop = true;
+
+                if (!walkSound.isPlaying)
+                {
+                    walkSound.loop = true;
+                    walkSound.Play();
+                }
             }
             else if (Input.GetKey(KeyCode.A))
             {
@@ -87,44 +67,61 @@ public class ScrollController : MonoBehaviour {
                 if (facingRight)
                     Flip();
                 anim.SetBool("isWalking", true);
+                walkSound.loop = true;
+
+                if (!walkSound.isPlaying)
+                {
+                    walkSound.loop = true;
+                    walkSound.Play();
+                }
             }
             else
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 anim.SetBool("isWalking", false);
->>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
+                walkSound.loop = false;
+                walkSound.Stop();
             }
         }
         else
         {
-<<<<<<< HEAD
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            anim.SetBool("isWalking", false);
-            walkSound.loop = false;
-            walkSound.Stop();
-=======
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+                if (!facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+                walkSound.loop = true;
+
+                if (!walkSound.isPlaying)
+                {
+                    walkSound.loop = true;
+                    walkSound.Play();
+                }
+            }
+            else if (Input.GetKey(KeyCode.D))
             {
                 rb.velocity = new Vector2(speed * Time.deltaTime * -1, rb.velocity.y);
                 if (facingRight)
                     Flip();
                 anim.SetBool("isWalking", true);
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
+                walkSound.loop = true;
 
-                rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
-                if (!facingRight)
-                    Flip();
-                anim.SetBool("isWalking", true);
+                if (!walkSound.isPlaying)
+                {
+                    walkSound.loop = true;
+                    walkSound.Play();
+                }
             }
             else
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 anim.SetBool("isWalking", false);
+                walkSound.loop = false;
+                walkSound.Stop();
             }
->>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
         }
+
     }
 
 
@@ -135,7 +132,7 @@ public class ScrollController : MonoBehaviour {
         {
             isJumping = false;
         }
-        else if(col.gameObject.tag.Equals("Enemy") || col.gameObject.tag.Equals("Garbaje"))
+        else if (col.gameObject.tag.Equals("Enemy") || col.gameObject.tag.Equals("Garbaje"))
         {
             mocoSound.Play();
         }

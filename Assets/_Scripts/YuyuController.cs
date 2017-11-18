@@ -69,4 +69,14 @@ public class YuyuController : MonoBehaviour {
             _actualYuyu += yuyuIncrease;
         }
     }
+    public int GetYuyuLevel()
+    {
+        int level = 1;
+
+        if (_actualYuyu >= 60 && _actualYuyu < 90)
+            level = 2;
+        else if (_actualYuyu >= 90) level = 3;
+
+        return level;
+    }
 }

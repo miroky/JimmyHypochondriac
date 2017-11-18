@@ -13,6 +13,7 @@ public class ScrollController : MonoBehaviour {
     public float speed;
     public float jumpForce;
     private Animator anim;
+    private YuyuController _yuyuController;
 
     void Start()
     {
@@ -20,11 +21,16 @@ public class ScrollController : MonoBehaviour {
         isJumping = false;
         facingRight = true;
         anim = GetComponent<Animator>();
+        _yuyuController = GameObject.FindGameObjectWithTag("Player").GetComponent<YuyuController>();
     }
 
 
     private void Update()
     {
+        if (_yuyuController.GetYuyuLevel() > 1)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Jump") && (!isJumping))
         {
             Jump();
@@ -34,26 +40,51 @@ public class ScrollController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.D))
+        if (_yuyuController.GetYuyuLevel() == 1)
         {
-            rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
-            if (!facingRight)
-                Flip();
-            anim.SetBool("isWalking", true);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            rb.velocity = new Vector2(speed * Time.deltaTime * -1, rb.velocity.y);
-            if (facingRight)
-                Flip();
-            anim.SetBool("isWalking", true);
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+                if (!facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                rb.velocity = new Vector2(speed * Time.deltaTime * -1, rb.velocity.y);
+                if (facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                anim.SetBool("isWalking", false);
+            }
         }
         else
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            anim.SetBool("isWalking", false);
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.velocity = new Vector2(speed * Time.deltaTime * -1, rb.velocity.y);
+                if (facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+
+                rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+                if (!facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                anim.SetBool("isWalking", false);
+            }
         }
-        
     }
 
 

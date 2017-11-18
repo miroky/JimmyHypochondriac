@@ -35,8 +35,8 @@ public class EnemyCoughController : MonoBehaviour {
             myRotation = transform.rotation;
 
             //SE INSTANCIA LA BALA
-            flusBulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
-            flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localCoughSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
+            flusBulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, Quaternion.identity);
+            flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, localCoughSpeed);
 
             time = 0;
 

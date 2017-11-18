@@ -34,6 +34,10 @@ public class GameController : MonoBehaviour
 
     private IEnumerator GameOver()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<ScrollController>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<ShootingController>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         yield return new WaitForSeconds(_secondsDelayGO);
         SceneManager.LoadScene("Street");
     }

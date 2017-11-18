@@ -23,25 +23,32 @@ public class ShootingController : MonoBehaviour {
     private Quaternion myRotation;
     private bool isFacingRight;
     private Rigidbody2D rb;
+    private YuyuController _yuyuController;
 
-    void Start () {
+    void Start()
+    {
         isFacingRight = GetComponent<ScrollController>().facingRight;
         localBulletSpeed = bulletSpeed;
         localFlusSpeed = flusSpeed;
         rb = GetComponent<Rigidbody2D>();
         maxFlusAmmo = 100;
+        _yuyuController = GameObject.FindGameObjectWithTag("Player").GetComponent<YuyuController>();
     }
-	
 
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Return) && clinesAmmo > 0)
+
+    void Update()
+    {
+        if (_yuyuController.GetYuyuLevel() > 3)
         {
-            isFacingRight = GetComponent<ScrollController>().facingRight;
-            CheckSpeed();
+            if (Input.GetKeyDown(KeyCode.Return) && clinesAmmo > 0)
+            {
+                isFacingRight = GetComponent<ScrollController>().facingRight;
+                CheckSpeed();
 
-            GameObject bulletClone;
-            myRotation = transform.rotation;
+                GameObject bulletClone;
+                myRotation = transform.rotation;
 
+<<<<<<< HEAD
             //SE INSTANCIA LA BALA
             bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
             bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localBulletSpeed, bulletClone.GetComponent<Rigidbody2D>().velocity.y);
@@ -50,31 +57,92 @@ public class ShootingController : MonoBehaviour {
             StartCoroutine("playAudio", clinesSound);
 
         }
+=======
+                //SE INSTANCIA LA BALA
+                bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
+                bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localBulletSpeed, bulletClone.GetComponent<Rigidbody2D>().velocity.y);
+                clinesAmmo--;
+            }
+>>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
 
-        if (Input.GetKeyDown(KeyCode.E) && flusAmmo > 0)
-        {
-            isFacingRight = GetComponent<ScrollController>().facingRight;
-            CheckSpeed();
 
-            GameObject flusBulletClone;
-            myRotation = transform.rotation;
+            if (Input.GetKeyDown(KeyCode.E) && flusAmmo > 0)
+            {
+                isFacingRight = GetComponent<ScrollController>().facingRight;
+                CheckSpeed();
 
+                GameObject flusBulletClone;
+                myRotation = transform.rotation;
+
+                //SE INSTANCIA LA BALA
+                flusBulletClone = (GameObject)Instantiate(flusBullet, spawnPoint.transform.position, myRotation);
+                flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localFlusSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
+                flusAmmo -= 10;
+
+            }
+
+            if (rb.velocity.x == 0f && rb.velocity.y == 0)
+
+<<<<<<< HEAD
             //SE INSTANCIA LA BALA
             flusBulletClone = (GameObject)Instantiate(flusBullet, spawnPoint.transform.position, myRotation);
             flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localFlusSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
             flusAmmo -= 10;
             StartCoroutine("playAudio", flusSound);
         }
+=======
+>>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
 
-        if(rb.velocity.x == 0f && rb.velocity.y == 0)
-        {
-            if (Input.GetKeyDown(KeyCode.R) && flusAmmo < maxFlusAmmo)
             {
+<<<<<<< HEAD
                 StartCoroutine("playAudio", reloadSound);
                 flusAmmo += 10;
+=======
+                if (Input.GetKeyDown(KeyCode.R) && flusAmmo < maxFlusAmmo)
+                {
+                    flusAmmo += 10;
+                }
+>>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
             }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.R) && clinesAmmo > 0)
+            {
+                isFacingRight = GetComponent<ScrollController>().facingRight;
+                CheckSpeed();
 
+                GameObject bulletClone;
+                myRotation = transform.rotation;
+
+                //SE INSTANCIA LA BALA
+                bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
+                bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localBulletSpeed, bulletClone.GetComponent<Rigidbody2D>().velocity.y);
+                clinesAmmo--;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return) && flusAmmo > 0)
+            {
+                isFacingRight = GetComponent<ScrollController>().facingRight;
+                CheckSpeed();
+
+                GameObject flusBulletClone;
+                myRotation = transform.rotation;
+
+                //SE INSTANCIA LA BALA
+                flusBulletClone = (GameObject)Instantiate(flusBullet, spawnPoint.transform.position, myRotation);
+                flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localFlusSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
+                flusAmmo -= 10;
+            }
+
+            if (rb.velocity.x == 0f && rb.velocity.y == 0)
+            {
+                if (Input.GetKeyDown(KeyCode.E) && flusAmmo < maxFlusAmmo)
+                {
+                    flusAmmo += 10;
+                }
+            }
+        }
 
     }
 

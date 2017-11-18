@@ -12,9 +12,14 @@ public class ScrollController : MonoBehaviour {
     //Public variables
     public float speed;
     public float jumpForce;
+<<<<<<< HEAD
     public bool facingRight;
     public AudioSource walkSound;
     public AudioSource mocoSound;
+=======
+    private Animator anim;
+    private YuyuController _yuyuController;
+>>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
 
     void Start()
     {
@@ -22,11 +27,16 @@ public class ScrollController : MonoBehaviour {
         isJumping = false;
         facingRight = true;
         anim = GetComponent<Animator>();
+        _yuyuController = GameObject.FindGameObjectWithTag("Player").GetComponent<YuyuController>();
     }
 
 
     private void Update()
     {
+        if (_yuyuController.GetYuyuLevel() > 1)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Jump") && (!isJumping))
         {
             Jump();
@@ -36,8 +46,9 @@ public class ScrollController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.D))
+        if (_yuyuController.GetYuyuLevel() == 1)
         {
+<<<<<<< HEAD
             rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
             if (!facingRight)
                 Flip();
@@ -62,16 +73,58 @@ public class ScrollController : MonoBehaviour {
             {
                 walkSound.loop = true;
                 walkSound.Play();
+=======
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+                if (!facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                rb.velocity = new Vector2(speed * Time.deltaTime * -1, rb.velocity.y);
+                if (facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                anim.SetBool("isWalking", false);
+>>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
             }
         }
         else
         {
+<<<<<<< HEAD
             rb.velocity = new Vector2(0, rb.velocity.y);
             anim.SetBool("isWalking", false);
             walkSound.loop = false;
             walkSound.Stop();
+=======
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.velocity = new Vector2(speed * Time.deltaTime * -1, rb.velocity.y);
+                if (facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+
+                rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+                if (!facingRight)
+                    Flip();
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                anim.SetBool("isWalking", false);
+            }
+>>>>>>> 0b6dc8d09b3e38f306e5f5bebf0a39188514482e
         }
-        
     }
 
 

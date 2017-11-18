@@ -9,7 +9,7 @@ public class ShootingController : MonoBehaviour {
     public GameObject spawnPoint;
     public AudioSource flusSound;
     public AudioSource clinesSound;
-
+    public AudioSource reloadSound;
 
     public float bulletSpeed;
     public float flusSpeed;
@@ -46,7 +46,9 @@ public class ShootingController : MonoBehaviour {
             bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
             bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localBulletSpeed, bulletClone.GetComponent<Rigidbody2D>().velocity.y);
             clinesAmmo--;
-            clinesSound.Play();
+
+            StartCoroutine("playAudio", clinesSound);
+
         }
 
         if (Input.GetKeyDown(KeyCode.E) && flusAmmo > 0)
@@ -61,13 +63,14 @@ public class ShootingController : MonoBehaviour {
             flusBulletClone = (GameObject)Instantiate(flusBullet, spawnPoint.transform.position, myRotation);
             flusBulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(localFlusSpeed, flusBulletClone.GetComponent<Rigidbody2D>().velocity.y);
             flusAmmo -= 10;
-            flusSound.Play();
+            StartCoroutine("playAudio", flusSound);
         }
 
         if(rb.velocity.x == 0f && rb.velocity.y == 0)
         {
             if (Input.GetKeyDown(KeyCode.R) && flusAmmo < maxFlusAmmo)
             {
+                StartCoroutine("playAudio", reloadSound);
                 flusAmmo += 10;
             }
         }
@@ -105,5 +108,12 @@ public class ShootingController : MonoBehaviour {
                 flusAmmo = 100;
             Destroy(collision.gameObject);
         }
+    }
+
+
+    IEnumerator playAudio(AudioSource source)
+    {
+        AudioSource.PlayClipAtPoint(source.clip, transform.position);
+        yield break;
     }
 }

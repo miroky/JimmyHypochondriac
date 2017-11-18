@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public Button button1;
     public Button button2;
     public Button button3;
+    public Rigidbody2D rb;
 
     private ScrollController scrollController;
 
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && rb.velocity.x == 0)
         {
             scrollController.enabled = !scrollController.enabled;
             fluFlu.gameObject.SetActive(!fluFlu.gameObject.activeInHierarchy);

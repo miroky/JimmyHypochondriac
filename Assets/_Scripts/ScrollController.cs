@@ -7,12 +7,14 @@ public class ScrollController : MonoBehaviour {
     //Private variables
     private Rigidbody2D rb;
     private bool isJumping;
-    public bool facingRight;
+    private Animator anim;
 
     //Public variables
     public float speed;
     public float jumpForce;
-    private Animator anim;
+    public bool facingRight;
+    public AudioSource walkSound;
+    public AudioSource mocoSound;
 
     void Start()
     {
@@ -40,6 +42,13 @@ public class ScrollController : MonoBehaviour {
             if (!facingRight)
                 Flip();
             anim.SetBool("isWalking", true);
+            walkSound.loop = true;
+
+            if (!walkSound.isPlaying)
+            {
+                walkSound.loop = true;
+                walkSound.Play();
+            }
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -47,11 +56,20 @@ public class ScrollController : MonoBehaviour {
             if (facingRight)
                 Flip();
             anim.SetBool("isWalking", true);
+            walkSound.loop = true;
+
+            if (!walkSound.isPlaying)
+            {
+                walkSound.loop = true;
+                walkSound.Play();
+            }
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
             anim.SetBool("isWalking", false);
+            walkSound.loop = false;
+            walkSound.Stop();
         }
         
     }
@@ -63,6 +81,10 @@ public class ScrollController : MonoBehaviour {
         if (col.gameObject.tag == "Platform")
         {
             isJumping = false;
+        }
+        else if(col.gameObject.tag.Equals("Enemy") || col.gameObject.tag.Equals("Garbaje"))
+        {
+            mocoSound.Play();
         }
     }
 
@@ -82,4 +104,5 @@ public class ScrollController : MonoBehaviour {
         facingRight = !facingRight;
         transform.Rotate(0, 180, 0, Space.Self);
     } //end Flip
+
 }

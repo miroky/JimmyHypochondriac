@@ -31,7 +31,6 @@ public class EnemyScrollController : MonoBehaviour {
     public Directions movDirection;
     public float speed;
 
-    // Use this for initialization
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		isJumping = false;
@@ -51,20 +50,19 @@ public class EnemyScrollController : MonoBehaviour {
         {
             jumpForce = 300;
             jumpInterval = 25;
-
         }
         else if (enemyType.ToString() == "Paloma")
         {
             jumpForce = 250;
             jumpInterval = 1;
-
-        }else if (enemyType.ToString() != "Mujer_Ninyo")
+        }
+        else if (enemyType.ToString() != "Mujer_Ninyo")
         {
             speed = 0;
         }
     }
 	
-	// Update is called once per frame
+
 	void Update () {
 		if (jumpInterval != -1 && !isJumping)
 		{
@@ -133,28 +131,16 @@ public class EnemyScrollController : MonoBehaviour {
 
             if (direction == 1)
             {
-                changeDirection(-1);
+                ChangeDirection(-1);
             }
             else
             {
-                changeDirection(1);
+                ChangeDirection(1);
             }
         }
-        //else if (col.gameObject.tag.Equals("Player"))
-        //{
-        //    yuyuController.SimulateTriggerEnter(this.gameObject.GetComponent<Collider2D>());
-        //}
     }
 
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    if (other.gameObject.tag.Equals("Player"))
-    //    {
-    //        yuyuController.SimulateTriggerExit(this.gameObject.GetComponent<Collider2D>());
-    //    }
-    //}
-
-    void changeDirection(float dir)
+    void ChangeDirection(float dir)
     {
         direction = dir;
         transform.Rotate(0, 180, 0, Space.Self);

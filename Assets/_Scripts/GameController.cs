@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
     private void CheckGameOver()
     {
         // Comprobar si el Yuyu ha llegado a 100
-        if (_yuyuController._actualYuyu == 100)
+        if (_yuyuController._actualYuyu >= 100)
         {
             isGameOver = true;
             allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];

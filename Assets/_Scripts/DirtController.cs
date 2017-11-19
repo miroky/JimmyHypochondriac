@@ -10,6 +10,7 @@ public class DirtController : MonoBehaviour {
     public Image dirt1;
     public Image dirt2;
     public Image dirt3;
+    public SpriteRenderer yellowBackground;
 
     public Button boton1;
     public Button boton2;
@@ -103,10 +104,7 @@ public class DirtController : MonoBehaviour {
             dirt1.color = colComplete;
             dirt2.color = colComplete;
             dirt3.color = colComplete;
-
         }
-
-
     }
 
     public void SetDirtEnable(bool dirt1Set, bool dirt2Set, bool dirt3Set)

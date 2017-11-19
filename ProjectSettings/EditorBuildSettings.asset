@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Pharmacy.unity
     guid: 38e17baaa26139b43bd7543501211b10
+  - enabled: 1
+    path: Assets/_Scenes/Credits.unity
+    guid: 3475fa5803077e84a91bcff1faccb3f7

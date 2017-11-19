@@ -2662,7 +2662,7 @@ Prefab:
     - target: {fileID: 224271323102068730, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.161255
+      value: 6.161194
       objectReference: {fileID: 0}
     - target: {fileID: 114330471762559890, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
         type: 2}
@@ -3487,6 +3487,11 @@ Prefab:
       propertyPath: m_Offset.x
       value: -0.018330302
       objectReference: {fileID: 0}
+    - target: {fileID: 114346651123648788, guid: cffe1216f4aeaa946b47ba7de573ceeb,
+        type: 2}
+      propertyPath: yuyuController
+      value: 
+      objectReference: {fileID: 1267136895}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cffe1216f4aeaa946b47ba7de573ceeb, type: 2}
   m_IsPrefabParent: 0
@@ -5389,6 +5394,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.9794141
       objectReference: {fileID: 0}
+    - target: {fileID: 114346651123648788, guid: cffe1216f4aeaa946b47ba7de573ceeb,
+        type: 2}
+      propertyPath: yuyuController
+      value: 
+      objectReference: {fileID: 1267136895}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cffe1216f4aeaa946b47ba7de573ceeb, type: 2}
   m_IsPrefabParent: 0
@@ -7996,6 +8006,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.9794122
       objectReference: {fileID: 0}
+    - target: {fileID: 114346651123648788, guid: cffe1216f4aeaa946b47ba7de573ceeb,
+        type: 2}
+      propertyPath: yuyuController
+      value: 
+      objectReference: {fileID: 1267136895}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cffe1216f4aeaa946b47ba7de573ceeb, type: 2}
   m_IsPrefabParent: 0

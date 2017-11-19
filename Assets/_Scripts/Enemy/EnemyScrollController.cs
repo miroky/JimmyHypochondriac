@@ -8,7 +8,7 @@ public class EnemyScrollController : MonoBehaviour {
 
     public enum EnemyTypes
     {
-        Gato, Mendigo, Mujer_Ninyo, Paloma
+        Gato, Mendigo, Mujer_Ninyo, Paloma, Excursionistas
     }
 
     public enum Directions
@@ -56,7 +56,7 @@ public class EnemyScrollController : MonoBehaviour {
             jumpForce = 250;
             jumpInterval = 1;
         }
-        else if (enemyType.ToString() != "Mujer_Ninyo")
+        else if (enemyType.ToString() == "Mendigo")
         {
             speed = 0;
         }

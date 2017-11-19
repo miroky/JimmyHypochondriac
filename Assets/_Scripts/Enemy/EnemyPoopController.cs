@@ -6,19 +6,29 @@ public class EnemyPoopController : MonoBehaviour {
 
     public GameObject bullet;
     public GameObject spawnPoint;
+    public GameObject birdPlatform;
 
     private Quaternion myRotation;
     private Vector3 direction;
     private AudioSource shootSound;
 
-    private float time;
+    private bool canPass = false;
 
+    private float time;
     public float shootInterval;
 
     // Use this for initialization
     void Start()
     {
         time = 0;
+        if (birdPlatform != null)
+        {
+            canPass = true;
+        }
+        else
+        {
+            birdPlatform = null;
+        }
     }
 
     // Update is called once per frame
@@ -36,6 +46,8 @@ public class EnemyPoopController : MonoBehaviour {
 
             //SE INSTANCIA LA BALA
             bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
+            if(canPass == true)
+                Physics2D.IgnoreCollision(bulletClone.GetComponent<Collider2D>(), birdPlatform.GetComponent<Collider2D>());
 
             time = 0;
         }

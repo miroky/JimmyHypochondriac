@@ -11,19 +11,27 @@ public class PlayerController : MonoBehaviour {
     public Button button3;
     public Rigidbody2D rb;
 
+    private ShootingController shootingController;
     private ScrollController scrollController;
+    private Animator anim;
 
     void Start()
     {
-        scrollController = GetComponent<ScrollController>();   
+        scrollController = GetComponent<ScrollController>();
+        anim = GetComponent<Animator>();
+        shootingController = GetComponent<ShootingController>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && rb.velocity.x == 0)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             scrollController.enabled = !scrollController.enabled;
+            shootingController.enabled = !shootingController.enabled;
             fluFlu.gameObject.SetActive(!fluFlu.gameObject.activeInHierarchy);
+
+            rb.velocity = new Vector2(0f, 0f);
+            anim.SetBool("isWalking", false);
 
             button1.interactable = !button1.interactable;
             button2.interactable = !button2.interactable;

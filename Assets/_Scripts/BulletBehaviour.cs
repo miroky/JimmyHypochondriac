@@ -45,6 +45,11 @@ public class BulletBehaviour : MonoBehaviour {
                 Destroy(collisioner.gameObject);
                 Destroy(gameObject);
             }
+            if (collisioner.gameObject.CompareTag("Player"))
+            {
+                collisioner.gameObject.GetComponent<ShootingController>().clinesAmmo++;
+                Destroy(gameObject);
+            }
         }
         
     }

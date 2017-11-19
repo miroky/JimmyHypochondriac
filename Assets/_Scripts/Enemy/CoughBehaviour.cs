@@ -16,7 +16,7 @@ public class CoughBehaviour : MonoBehaviour {
     //SE DESTRUYE LA BALA EN 0.5 SEGUNDOS SI NO CONTACTA CON NADA
     void Update()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
     }
 
 
@@ -32,6 +32,5 @@ public class CoughBehaviour : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
-
     }
 }

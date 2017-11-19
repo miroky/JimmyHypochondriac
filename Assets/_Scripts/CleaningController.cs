@@ -22,16 +22,8 @@ public class CleaningController : MonoBehaviour {
 
     public void LimpiarDirt()
     {
-        StartCoroutine("playAudio", flusSound);
+        flusSound.Play();
         player.GetComponent<YuyuController>()._actualYuyu -= 15;
     }
-
-    IEnumerator playAudio(AudioSource source)
-    {
-        AudioSource.PlayClipAtPoint(source.clip, transform.position);
-        yield break;
-    }
-
-
 
 }

@@ -29,13 +29,10 @@ public class EnemyPoopController : MonoBehaviour {
 
         if (time == shootInterval)
         {
-            //SE INSTANCIA EL SONIDO DEL DISPARO Y SE GUARDA LA ROTACION DEL TRANSFORM
-            //shootSound.Play();
-            GameObject bulletClone;
             myRotation = transform.rotation;
 
             //SE INSTANCIA LA BALA
-            bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
+            GameObject bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
 
             time = 0;
         }

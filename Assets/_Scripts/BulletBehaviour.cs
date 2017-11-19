@@ -16,7 +16,7 @@ public class BulletBehaviour : MonoBehaviour {
     //SE DESTRUYE LA BALA EN 0.5 SEGUNDOS SI NO CONTACTA CON NADA
     void Update()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f);
     }
 
     //DESTRUCCION DE LA BALA EN CASO DE CHOQUE

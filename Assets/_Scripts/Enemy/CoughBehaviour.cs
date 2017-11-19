@@ -19,20 +19,6 @@ public class CoughBehaviour : MonoBehaviour {
         Destroy(gameObject, 5f);
     }
 
-    //DESTRUCCION DE LA BALA EN CASO DE CHOQUE
-    void OnTriggerEnter2D(Collider2D collisioner)
-    {
-        //GESTION DE LA COLISION DE LA BALA CON UN ENEMIGO
-        if (collisioner != null)
-        {
-            if (collisioner.gameObject.CompareTag("Player"))
-            {
-                collisioner.GetComponent<EnemyController>().hpPoints--;
-                Destroy(gameObject);
-            }
-        }
-
-    }
 
     //DESTRUCCION DE LA BALA EN CASO DE CHOQUE
     void OnCollisionEnter2D(Collision2D collisioner)
@@ -42,7 +28,7 @@ public class CoughBehaviour : MonoBehaviour {
         {
             if (collisioner.gameObject.CompareTag("Player"))
             {
-                Destroy(collisioner.gameObject);
+                collisioner.gameObject.GetComponent<YuyuController>()._actualYuyu += 5;
                 Destroy(gameObject);
             }
         }

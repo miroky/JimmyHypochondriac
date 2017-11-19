@@ -22,7 +22,7 @@ public class EnemyScrollController : MonoBehaviour {
 
     private float direction;
 
-    private float time;    
+    private float time;
     private float jumpForce;
     private float jumpInterval;
 

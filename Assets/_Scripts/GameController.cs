@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
+        //gameOver.GetComponent("Seconds")
         if(!isGameOver)            
             CheckGameOver();
     }

@@ -42,13 +42,11 @@ public class EnemyPoopController : MonoBehaviour {
             myRotation = transform.rotation;
 
             //SE INSTANCIA LA BALA
-<<<<<<< HEAD
-            GameObject bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
-=======
+            GameObject bulletClone;
             bulletClone = (GameObject)Instantiate(bullet, spawnPoint.transform.position, myRotation);
-            if(canPass == true)
+
+            if (canPass == true)
                 Physics2D.IgnoreCollision(bulletClone.GetComponent<Collider2D>(), birdPlatform.GetComponent<Collider2D>());
->>>>>>> c8bf284a03912af3059c3f167a8bdf92c0915b32
 
             time = 0;
         }

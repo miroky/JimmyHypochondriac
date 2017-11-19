@@ -112,6 +112,82 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &171753131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 171753132}
+  - component: {fileID: 171753134}
+  - component: {fileID: 171753133}
+  m_Layer: 5
+  m_Name: Header
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &171753132
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171753131}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 30.049988, y: 149, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 902588418}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 30.049988, y: 149}
+  m_SizeDelta: {x: 429.3, y: 94.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &171753133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171753131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 32
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Jimmy the Hypochondriac
+
+    -STAFF-'
+--- !u!222 &171753134
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171753131}
 --- !u!1 &446843432
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +266,7 @@ GameObject:
   - component: {fileID: 541957566}
   - component: {fileID: 541957565}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Titles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,16 +279,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 541957563}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -109.99999, y: 8, z: 0}
+  m_LocalPosition: {x: -109.49999, y: -80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 902588418}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: 8}
-  m_SizeDelta: {x: 185.3, y: 154}
+  m_AnchoredPosition: {x: -109.5, y: -80}
+  m_SizeDelta: {x: 186.3, y: 285.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541957565
 MonoBehaviour:
@@ -255,7 +331,9 @@ MonoBehaviour:
     Developers
 
 
-'
+
+
+    Special Thanks'
 --- !u!222 &541957566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -285,18 +363,19 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 902588417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -370, z: 0}
+  m_LocalPosition: {x: 0, y: -515.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 171753132}
   - {fileID: 541957564}
   - {fileID: 916936103}
   - {fileID: 2032852326}
   m_Father: {fileID: 1740526938}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -370}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -255}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &902588419
@@ -327,7 +406,7 @@ GameObject:
   - component: {fileID: 916936105}
   - component: {fileID: 916936104}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Names
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,16 +419,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 916936102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 122, y: -30, z: 0}
+  m_LocalPosition: {x: 117.5, y: -107.80002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 902588418}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 122, y: -30}
-  m_SizeDelta: {x: 245.4, y: 230.9}
+  m_AnchoredPosition: {x: 117.5, y: -107.8}
+  m_SizeDelta: {x: 236.5, y: 342.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916936104
 MonoBehaviour:
@@ -383,7 +462,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Alberto \"Big Boss\"\nRub\xE9n\nJan\n\nBorja\nV\xEDctor\nVaro \"miroky\""
+  m_Text: "Alberto \"Big Boss\"\nRub\xE9n\nJan\n\nBorja\nV\xEDctor\nVaro \"miroky\"\n\nSTARFOOD,
+    S.L."
 --- !u!222 &916936105
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -696,7 +776,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1740526934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalPosition: {x: 463, y: 260.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 446843433}
@@ -720,7 +800,7 @@ GameObject:
   - component: {fileID: 2032852328}
   - component: {fileID: 2032852327}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: Footer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,15 +813,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032852325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.050003, y: -236.4, z: 0}
+  m_LocalPosition: {x: 30.050003, y: -337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 902588418}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.05, y: -236.4}
+  m_AnchoredPosition: {x: 30.05, y: -337}
   m_SizeDelta: {x: 429.3, y: 94.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032852327
@@ -776,10 +856,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'A game for AEV Game Jam 2017
-
-
-    Special thanks:    STARFOOD, S.L.'
+  m_Text: A game for AEV Game Jam 2017
 --- !u!222 &2032852328
 CanvasRenderer:
   m_ObjectHideFlags: 0

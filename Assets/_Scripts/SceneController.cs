@@ -22,6 +22,10 @@ public class SceneController : MonoBehaviour {
     {
         SceneManager.LoadScene("Street");
     }
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 
     public void Exit()
     {

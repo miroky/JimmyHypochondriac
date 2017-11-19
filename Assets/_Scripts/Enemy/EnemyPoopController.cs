@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPoopController : MonoBehaviour {
+public class EnemyPoopController : MonoBehaviour
+{
 
     public GameObject bullet;
     public GameObject spawnPoint;
@@ -57,7 +58,7 @@ public class EnemyPoopController : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         // BORRAR CACA CUANDO TOQUE EL SUELO Y PLAYER
-        if(col.gameObject.tag == "Player" || col.gameObject.name == "Floor")
+        if (col.gameObject.tag == "Player" || col.gameObject.name == "Floor")
         {
             DestroyObject(this);
         }

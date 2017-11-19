@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {	
 
-    public void LoadHouse()
+    public void LoadEnding()
     {
-        SceneManager.LoadScene("House");
+        SceneManager.LoadScene("Ending");
     }
 
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("Main_menu");
     }
-    public void LoadPharmacy()
+    public void LoadOpening()
     {
-        SceneManager.LoadScene("Pharmacy");
+        SceneManager.LoadScene("Opening");
     }
     public void LoadStreet()
     {

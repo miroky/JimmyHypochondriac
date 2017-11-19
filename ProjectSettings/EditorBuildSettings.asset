@@ -12,11 +12,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/Street.unity
     guid: 20049867e9d466644a1e07999d7181ac
   - enabled: 1
-    path: Assets/_Scenes/House.unity
-    guid: 29e44742d05ed2540aacb441e003f139
-  - enabled: 1
-    path: Assets/_Scenes/Pharmacy.unity
-    guid: 38e17baaa26139b43bd7543501211b10
-  - enabled: 1
     path: Assets/_Scenes/Credits.unity
     guid: 3475fa5803077e84a91bcff1faccb3f7

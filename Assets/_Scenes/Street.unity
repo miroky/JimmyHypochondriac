@@ -1595,7 +1595,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243351008334478280, guid: 2643c55f8c358074eaaf59ed3e7f3a66,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3e25c65e7687c96429fab0173979b8b1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 75a9e3a60f58a8c4dae2553aebf0ff23, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2589,7 +2589,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -443080707
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c323201d4fa0db242924fafcc15da330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2639,6 +2639,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 224637366235118468, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5720.151
+      objectReference: {fileID: 0}
+    - target: {fileID: 224637366235118468, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3249.9597
+      objectReference: {fileID: 0}
+    - target: {fileID: 223317236304676110, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 127067858}
     - target: {fileID: 224271323102068730, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -2648,21 +2663,6 @@ Prefab:
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 6.161255
-      objectReference: {fileID: 0}
-    - target: {fileID: 223317236304676110, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 127067858}
-    - target: {fileID: 224637366235118468, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3691.1562
-      objectReference: {fileID: 0}
-    - target: {fileID: 224637366235118468, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2124.0254
       objectReference: {fileID: 0}
     - target: {fileID: 114330471762559890, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c,
         type: 2}
@@ -2679,10 +2679,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1094124669}
-    - target: {fileID: 1208188483200072, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1659e93cae6a51c4e937c2aeb3e9ca5c, type: 2}
   m_IsPrefabParent: 0
@@ -4748,7 +4744,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -443080707
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c323201d4fa0db242924fafcc15da330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -5311,7 +5307,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -443080707
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ef1322544cb2f7645be36e9c63e9f145, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5950,7 +5946,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -443080707
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0f80779eea5184d4cb3f34ca3d98eeff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6020,45 +6016,6 @@ Prefab:
       propertyPath: button3
       value: 
       objectReference: {fileID: 398439002}
-    - target: {fileID: 114385515143739642, guid: 7fd181ebcc32dc04d8cc64c91dd86f33,
-        type: 2}
-      propertyPath: speed
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 114774286402606554, guid: 7fd181ebcc32dc04d8cc64c91dd86f33,
-        type: 2}
-      propertyPath: _actualYuyu
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740352908137208, guid: 7fd181ebcc32dc04d8cc64c91dd86f33, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114385515143739642, guid: 7fd181ebcc32dc04d8cc64c91dd86f33,
-        type: 2}
-      propertyPath: jumpForce
-      value: 550
-      objectReference: {fileID: 0}
-    - target: {fileID: 70099150665036476, guid: 7fd181ebcc32dc04d8cc64c91dd86f33,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114774286402606554, guid: 7fd181ebcc32dc04d8cc64c91dd86f33,
-        type: 2}
-      propertyPath: _garbageYuyuIncrease
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 50334422125256352, guid: 7fd181ebcc32dc04d8cc64c91dd86f33,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: f838458f8f5f67046b0d4bccfabbde26, type: 2}
-    - target: {fileID: 212315239360570074, guid: 7fd181ebcc32dc04d8cc64c91dd86f33,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fd181ebcc32dc04d8cc64c91dd86f33, type: 2}
   m_IsPrefabParent: 0

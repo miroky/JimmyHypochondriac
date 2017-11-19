@@ -41,7 +41,7 @@ public class ShootingController : MonoBehaviour
     {
         if (_yuyuController.GetYuyuLevel() < 3)
         {
-            if (Input.GetKeyDown(KeyCode.Return) && clinesAmmo > 0)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && clinesAmmo > 0)
             {
                 isFacingRight = GetComponent<ScrollController>().facingRight;
                 CheckSpeed();
@@ -57,7 +57,7 @@ public class ShootingController : MonoBehaviour
                 StartCoroutine("playAudio", clinesSound);
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && flusAmmo > 0)
+            if (Input.GetKeyDown(KeyCode.Mouse2) && flusAmmo > 0)
             {
                 isFacingRight = GetComponent<ScrollController>().facingRight;
                 CheckSpeed();
@@ -100,7 +100,7 @@ public class ShootingController : MonoBehaviour
                 StartCoroutine("playAudio", clinesSound);
             }
 
-            if (Input.GetKeyDown(KeyCode.Return) && flusAmmo > 0)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && flusAmmo > 0)
             {
                 isFacingRight = GetComponent<ScrollController>().facingRight;
                 CheckSpeed();
@@ -118,7 +118,7 @@ public class ShootingController : MonoBehaviour
 
             if (rb.velocity.x == 0f && rb.velocity.y == 0)
             {
-                if (Input.GetKeyDown(KeyCode.E) && flusAmmo < maxFlusAmmo)
+                if (Input.GetKeyDown(KeyCode.Mouse2) && flusAmmo < maxFlusAmmo)
                 {
                     StartCoroutine("playAudio", reloadSound);
                     flusAmmo += 10;
